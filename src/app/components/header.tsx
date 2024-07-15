@@ -13,10 +13,10 @@ export default function Header({ children }: HeaderProps) {
       </h1>
       <div className="w-px self-stretch bg-gray-300" />
       <div className="flex gap-3">
-        <Image width={44} height={44} src="/images/avatar.png" alt="avatar" />
+        <Image width={44} height={44} src="/images/foto1.jpg" alt="avatar" />
         <div>
-          <p className="text-base	font-semibold text-gray-900">Adam Smith</p>
-          <p className="text-sm	font-light text-gray-900">adamsmith@gmail.com</p>
+          <p className="text-base	font-semibold text-gray-900">John Smith</p>
+          <p className="text-sm	font-light text-gray-900">testmail@gmail.com</p>
         </div>
       </div>
     </header>
