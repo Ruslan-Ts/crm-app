@@ -2,10 +2,12 @@
 
 import React from 'react';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 export interface LogoUploaderProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: string;
+  square?: boolean;
 }
 
 export default function LogoUploader({
