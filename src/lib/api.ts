@@ -55,10 +55,9 @@ export interface IPromotion {
 }
 
 const PROJECT_TOKEN = process.env.NEXT_PUBLIC_PROJECT_TOKEN;
-const BASE_URL = process.env.BASE_URL;
 
 const buildUrl = (...paths: string[]) =>
-  `https://${PROJECT_TOKEN}.${BASE_URL}/api/v1/${paths.join('/')}`;
+  `https://${PROJECT_TOKEN}.mockapi.io/api/v1/${paths.join('/')}`;
 
 const stringifyQueryParams = (params: Record<string, string>) =>
   new URLSearchParams(params).toString();
@@ -68,6 +67,7 @@ const sendRequest = async <T>(url: string, init?: RequestInit) => {
   if (!res.ok) {
     throw new Error(await res.text());
   }
+
   return (await res.json()) as T;
 };
 
@@ -94,6 +94,7 @@ export const getCompanies = (init?: RequestInit) => {
 export const getCompany = (id: string, init?: RequestInit) => {
   return sendRequest<Company>(buildUrl('companies', id), init);
 };
+
 export const getPromotions = async (
   params: Record<string, string> = {},
   init?: RequestInit
