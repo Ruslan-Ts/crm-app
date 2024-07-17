@@ -43,13 +43,13 @@ export default function PromotionForm({
     onSuccess: (data) => {
       queryClient.setQueryData(['promotions', companyId], (oldData) => {
         if (oldData) {
-          return oldData.concat(data);
+          return { ...oldData, ...data };
         }
       });
 
       queryClient.setQueryData(['promotions'], (oldData) => {
         if (oldData) {
-          return oldData.concat(data);
+          return { ...oldData, ...data };
         }
       });
     },
